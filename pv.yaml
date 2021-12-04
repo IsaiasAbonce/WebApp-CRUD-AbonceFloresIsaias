@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv
+  namespace: iabonce
+  labels:
+    app: webapp
+spec:
+  storageClassName: storage-crud
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/crud-data"

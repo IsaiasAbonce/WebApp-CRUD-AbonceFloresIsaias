@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1 # APIVersion define el esquema versionado de la representación del ingress.
+kind: Ingress # Declara el tipo de objeto a crear en este YALM.
+metadata: # Establecemos los metadatos para describir el contenido informativo del recurso.
+  name: ingress # Nombre del ingress.
+  namespace: iabonce # Nombre del namespace perteneciente.
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec: # Especificaciones del ingress.
+  rules:
+  - host: app.iabonce.com # Enlace app.
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mywebcrud-svc # Para el servicio
+            port:
+              number: 80 # Puerto de comunicación de los contenedores/PODs.

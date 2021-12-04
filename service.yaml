@@ -1,0 +1,17 @@
+apiVersion: v1 # APIVersion define el esquema versionado de la representación del servicio.
+kind: Service # Declara el tipo de objeto a crear en este YALM.
+metadata: # Establecemos los metadatos para describir el contenido informativo del recurso.
+  name: mywebcrud-svc # Nombre del servicio.
+  namespace: iabonce # Nombre del namespace perteneciente.
+  labels:
+    app: webapp
+spec: # Especificaciones del service.
+  type: NodePort # Indicamos el tipo de servicio: NodePort --> Acceder desde fuera del cluster al recurso indicado dado al selector.
+  ports:
+  - port: 80 # Puerto de comunicación de los contenedores/PODs.
+    #nodePort: 30001
+    #protocol: TCP
+    #targetPort: 80
+  #type: LoadBalancer
+  selector:
+    app: webapp

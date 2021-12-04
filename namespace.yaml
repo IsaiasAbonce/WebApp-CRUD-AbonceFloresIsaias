@@ -1,0 +1,7 @@
+apiVersion: v1 # APIVersion define el esquema versionado de la representación del namespace.
+kind: Namespace # Declara el tipo de objeto a crear en este YALM.
+metadata: # Establecemos los metadatos para describir el contenido informativo del recurso.
+    name: iabonce # Nombre del namespace.
+    labels:
+      app: webapp
+

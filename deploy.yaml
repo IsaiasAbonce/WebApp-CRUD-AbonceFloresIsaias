@@ -1,0 +1,30 @@
+apiVersion: apps/v1 # APIVersion define el esquema versionado de la representación del deployment.
+kind: Deployment # Declara el tipo de objeto a crear en este YALM.
+metadata: # Establecemos los metadatos para describir el contenido informativo del recurso.
+  name: mywebcrud-d # Nombre del deployment.
+  namespace: iabonce # Nombre del namespace perteneciente.
+  labels:
+    estado: "1"
+spec: # Especificaciones del deploy.
+  selector: # Establecemos selectores que definiran cómo el Deployment identifica los Pods que debe gestionar.
+    matchLabels:
+      app: webapp
+  replicas: 7 # Establecemos el número de réplicas deseadas en nuestro deploy para nuestra aplicación web.
+  template: # Plantilla que define los container/PODs dentro de nuestro deploy.
+    metadata:  # Establecemos los metadatos para describir el contenido informativo de los PODs.
+      labels: # Etiquetar a los PODs como app: webapp
+        app: webapp
+    spec:
+      containers: # Especificaciones para los PODs dentro del deployment.
+      - name: mywebcrud
+        image: abonceisaias/mywebcrud
+        ports:
+        - containerPort: 80
+        #volumeMounts:
+        #  - mountPath: /volume-crud 
+        #    name: pv-claim
+      #volumes:
+      #  - name: pv-claim
+      #    persistent Volume Claim: 
+      #      sclaimName: volume-claim
+        
