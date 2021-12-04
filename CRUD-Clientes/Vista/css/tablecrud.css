@@ -1,0 +1,54 @@
+table {
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border-collapse: collapse;/*Eliminar espacios en la tabla y se muestre como tal una simple tabla*/
+}
+
+/*En CSS se puede concatenar los selectores, aun que tuvierán un hijo seleccionado*/
+table th,
+table td {
+    border: 1px solid #dee2e6;
+    padding: 5px 50px;
+}
+
+table th,
+table td:first-child {
+    background-color: #17A2B8;
+    color: #FFF;
+    font-weight: 600;
+    width: 100px;
+}
+
+table td span {
+    margin-right: 15px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+table td span:hover {
+    opacity: 0.7;
+}
+
+table td span:nth-child(1) {
+    color: #17a2b8;
+}
+
+table td span:nth-child(2) {
+    color: #28a745;
+}
+
+table td span:nth-child(3) {
+    color: #dc3545;
+    margin-right: 0px;
+}
+
+table tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+table tr:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}

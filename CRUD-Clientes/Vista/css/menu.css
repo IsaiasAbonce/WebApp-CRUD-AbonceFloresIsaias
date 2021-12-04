@@ -1,0 +1,78 @@
+        /*Estilo a toda la raiz del HTML*/
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        header{
+            display: flex;
+            flex-direction: row;/*Aquí el valor por defecto es "row" pero de todos modos lo coloco*/
+            justify-content: space-around;/*Indico la dirección EjePrincipal de los elementos dentro del contenedor*/
+            align-items: center;/*Indico la dirección EjeSecundario de los elementos dentro del contenedor*/
+            padding: 10px 0px;
+            border-bottom: 1px solid #dedede;
+            margin-bottom: 100px;
+        }
+
+        li{
+            display: inline-block;/*Un desplazamiento de items en linea uno a lado de otro*/
+            padding: 0px 20px;/*Espacios entre ellos*/
+            list-style: none;/*Le quitamos el estilo de lista que tiene por defecto*/
+        }
+
+        a{
+            font-size: 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #4a3866;
+            transition: all 0.3s;/*Aplicar una transición para que no tenga cambios bruscos*/
+        }
+
+        a:hover{
+            color: #ff2753;
+        }
+
+        .logo{
+            width: 200px;
+            cursor: pointer;
+        }
+
+        .btn{
+            background-color: #ff2753;
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: #ffffff;
+        }
+
+        .btn:hover{
+            background-color: #4a3866;
+            color: #ffffff;
+        }
+
+        /* MENU 2 */
+        .menu2{
+            padding: 10px 5%;
+        }
+
+        .menu2 .logo{
+            margin-right: auto;
+        }
+
+        .menu2 .btn{
+            margin-left: 20px;
+        }
+
+        /* MENU 3 */
+        .menu3 .logo{
+            order: 2;
+        }
+
+        .menu3 nav{
+            order: 1;
+        }
+
+        .menu3 .btn{
+            order: 0;
+        }
